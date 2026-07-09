@@ -1,256 +1,353 @@
-const skills = [
-  "SQL", "Snowflake", "Amazon Redshift", "AWS", "Tableau", "Power BI",
-  "Salesforce", "NetSuite", "HubSpot", "dbt", "Fivetran", "Jira",
-  "Confluence", "Data Modeling", "Executive Reporting", "UAT",
+import Image from "next/image";
+
+const contact = [
+  { label: "Greater Boston, MA" },
+  { label: "978-870-2388", href: "tel:9788702388" },
+  { label: "kyleesewell@outlook.com", href: "mailto:kyleesewell@outlook.com" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/kylesewell/" },
+];
+
+const skillGroups = [
+  {
+    title: "Business Analysis",
+    skills: [
+      "Requirements Gathering",
+      "Business Process Analysis",
+      "Solution Design",
+      "Technical Specifications",
+      "Functional Specifications",
+      "Process Modeling",
+      "User Stories",
+      "SDLC",
+      "Agile",
+      "Scrum",
+      "QA/UAT",
+      "Release Management",
+      "Stakeholder Management",
+    ],
+  },
+  {
+    title: "Payments",
+    skills: [
+      "Payment Processing",
+      "Transaction Lifecycle",
+      "Settlement",
+      "Payment Processor Integrations",
+      "Transaction Data Standards",
+      "Payment Reporting",
+      "Reconciliation",
+      "Operational Reporting",
+    ],
+  },
+  {
+    title: "Data & Analytics",
+    skills: [
+      "SQL",
+      "Data Modeling",
+      "ETL",
+      "Data Pipelines",
+      "Business Intelligence",
+      "Dashboard Development",
+      "KPI Development",
+      "Executive Reporting",
+      "Root Cause Analysis",
+      "Data Quality",
+    ],
+  },
+  {
+    title: "Cloud",
+    skills: [
+      "AWS",
+      "Amazon Redshift",
+      "Amazon Kinesis",
+      "AWS Glue",
+      "Snowflake",
+      "dbt",
+      "Fivetran",
+      "REST APIs",
+      "Cloud Data Warehousing",
+    ],
+  },
+  {
+    title: "Business Systems",
+    skills: [
+      "Power BI",
+      "Tableau",
+      "Salesforce",
+      "HubSpot",
+      "NetSuite",
+      "Gainsight",
+      "SAP ERP",
+      "Jira",
+      "Confluence",
+    ],
+  },
+];
+
+const achievements = [
+  "Modernized enterprise payment reporting by leading the transition from batch processing to real-time AWS streaming architecture supporting Lighthouse Business Manager.",
+  "Owned enterprise transaction data standards, technical specifications, and reporting requirements supporting payment processor integrations and international platform expansion.",
+  "Delivered executive analytics, KPI frameworks, and business intelligence solutions used by Finance, Revenue Operations, Product, Sales, Marketing, and Customer Success leadership.",
+  "Built scalable cloud-based analytics platforms integrating Salesforce, NetSuite, HubSpot, and operational systems into trusted enterprise reporting environments.",
 ];
 
 const experience = [
   {
     company: "Shift4 Payments",
-    logo: "/logos/shift4.png",
-    role: "Technical Business Analyst III",
-    dates: "Dec 2023 – Mar 2026",
-    text: "Supported enterprise-scale payment transaction reporting, settlement analytics, data quality validation, and Lighthouse Business Manager platform enhancements.",
+    role: "Senior Technical Business Analyst",
+    location: "Remote",
+    dates: "December 2023 - March 2026",
+    bullets: [
+      "Owned the backend data platform supporting Lighthouse Business Manager (LBM), delivering enterprise transaction, settlement, and operational reporting through AWS data pipelines, scalable data models, and data quality frameworks.",
+      "Served as owner of the Transaction Data Specification (TDS), defining transaction standards, business rules, field mappings, and reporting requirements supporting new payment processors, international markets, and emerging payment technologies.",
+      "Led planning, development, and deployment of real-time transaction and settlement reporting, transitioning LBM from scheduled batch processing to a low-latency streaming architecture using AWS Kinesis and AWS Glue.",
+      "Acted as the primary liaison between business stakeholders and engineering teams, translating business needs into technical requirements, functional specifications, and implementation plans.",
+      "Facilitated Agile delivery through backlog management, sprint planning, Scrum ceremonies, QA/UAT coordination, release management, and production deployments.",
+      "Led production support initiatives by performing root cause analysis, resolving transaction and settlement discrepancies, improving data quality, and enhancing reporting accuracy and platform reliability.",
+    ],
   },
   {
     company: "Wasabi Technologies",
-    logo: "/logos/wasabi.jpg",
     role: "Senior Data Analyst",
-    dates: "Sep 2021 – Sep 2023",
-    text: "Built executive dashboards, revenue analytics, sales pipeline reporting, and cloud storage profitability insights using SQL, Snowflake, dbt, Fivetran, and Tableau.",
+    location: "Boston, MA",
+    dates: "September 2021 - September 2023",
+    bullets: [
+      "Led enterprise analytics initiatives supporting Finance, Revenue Operations, Sales, Marketing, Product, and Customer Success, providing executive insights that informed strategic business decisions.",
+      "Modernized the analytics ecosystem by integrating Salesforce, HubSpot, NetSuite, and cloud infrastructure into scalable Snowflake-based data pipelines and automated transformation workflows.",
+      "Developed executive dashboards and KPI frameworks measuring revenue growth, profitability, customer acquisition, storage utilization, product adoption, and operational performance.",
+      "Produced investor-facing analytics, executive reporting, and due diligence analyses supporting fundraising activities and long-term strategic planning.",
+      "Partnered with executive leadership to identify trends, improve reporting consistency, and establish trusted enterprise metrics.",
+    ],
   },
   {
     company: "ConnectWise",
-    logo: "/logos/connectwise.png",
-    role: "Data Analyst",
-    dates: "Nov 2020 – Sep 2021",
-    text: "Developed customer success dashboards, customer health scoring, churn risk analysis, and adoption reporting for SaaS customer success teams.",
+    role: "Data Analyst, Customer Success",
+    location: "Tampa, FL",
+    dates: "November 2020 - September 2021",
+    bullets: [
+      "Partnered with Customer Success, Sales, and Marketing leaders to gather business requirements and deliver analytics supporting retention, renewals, and revenue growth initiatives.",
+      "Designed predictive customer health scoring models that improved customer retention by identifying churn risk and expansion opportunities.",
+      "Built Power BI dashboards, customer segmentation models, KPI reporting, and cohort analyses measuring product adoption, engagement, renewal trends, and customer success performance.",
+      "Managed Salesforce reporting, CRM enhancements, data integrations, and Gainsight configuration supporting customer lifecycle management.",
+    ],
   },
   {
-    company: "Covius Solutions",
-    logo: "/logos/covius.jpg",
+    company: "Clayton Holdings (Covius Solutions)",
     role: "Data Analyst",
-    dates: "Mar 2018 – Jun 2020",
-    text: "Delivered compliance, operational, and audit reporting while supporting data integrity, SQL analysis, and production data issue resolution.",
+    location: "Clearwater, FL",
+    dates: "March 2018 - June 2020",
+    bullets: [
+      "Gathered business and system requirements supporting the proprietary eCLAS mortgage underwriting platform for underwriting, compliance, and property valuation workflows.",
+      "Developed SQL queries, views, stored procedures, and database objects while maintaining production data integrity and application stability.",
+      "Managed SQL-based ETL workflows validating mortgage loan files, resolving data quality issues, and preparing reporting-ready datasets for enterprise reporting.",
+      "Delivered operational reporting, production support, root cause analysis, and data validation across business-critical mortgage systems.",
+    ],
   },
   {
-    company: "TD SYNNEX",
-    logo: "/logos/tdsynnex.png",
+    company: "Tech Data Corporation (TD SYNNEX)",
     role: "Strategic Account Representative",
-    dates: "May 2015 – Jun 2018",
-    text: "Managed SMB and strategic accounts, supported vendor programs, analyzed account performance, and used sales data to drive customer growth and retention.",
-  },
-];
-
-const projects = [
-  {
-    title: "Enterprise Payment Reporting Platform",
-    description:
-      "Supported data requirements, validation, and delivery coordination for transaction reporting and settlement data used across enterprise payment operations.",
-  },
-  {
-    title: "Customer Health Scoring Model",
-    description:
-      "Built analytics to identify customer risk, adoption patterns, and retention opportunities across SaaS customer success workflows.",
-  },
-  {
-    title: "Cloud Storage Profitability Analytics",
-    description:
-      "Analyzed storage utilization, data center cost drivers, and profitability trends to support executive decision-making.",
-  },
-  {
-    title: "Executive KPI Dashboards",
-    description:
-      "Created dashboards and reporting frameworks for sales, revenue, product, operations, and leadership teams.",
+    location: "Clearwater, FL",
+    dates: "May 2015 - January 2018",
+    bullets: [
+      "Managed a portfolio of 120+ technology reseller accounts, serving as a trusted advisor while driving account growth and long-term customer relationships.",
+      "Managed the complete sales lifecycle from requirements gathering and RFQ development through pricing analysis, solution design, quoting, order fulfillment, and account planning within SAP ERP.",
+      "Consulted customers on technology solutions, pricing strategies, rebate programs, and vendor promotions while identifying cross-selling and upselling opportunities.",
+    ],
   },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
-      <section className="mx-auto flex min-h-screen max-w-6xl items-center px-6 py-16">
-        <div className="grid w-full gap-12 md:grid-cols-[1fr_1.4fr] md:items-center">
-          <div className="flex justify-center md:justify-start">
-            <img
+    <main className="min-h-screen bg-[#f6f2ea] text-[#211d18]">
+      <section className="border-b border-[#211d18]/15 px-5 py-10 sm:px-8 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.4fr] lg:items-end">
+          <div className="overflow-hidden rounded-md border border-[#211d18]/20 bg-[#211d18] shadow-2xl shadow-[#211d18]/15">
+            <Image
               src="/headshot.jpg"
               alt="Kyle Sewell"
-              className="w-72 rounded-3xl border border-slate-800 shadow-2xl shadow-cyan-950/40"
+              width={900}
+              height={1125}
+              priority
+              className="aspect-[4/5] w-full object-cover opacity-95 grayscale"
             />
           </div>
 
-          <div>
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
-              Business Intelligence • Data Analytics • Systems Delivery
+          <div className="pb-2">
+            <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#8a4f2f]">
+              Senior Analyst
             </p>
-
-            <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
+            <h1 className="mt-5 max-w-4xl text-6xl font-black leading-[0.9] tracking-tight sm:text-7xl lg:text-8xl">
               Kyle Sewell
             </h1>
-
-            <h2 className="mt-5 text-2xl font-medium text-slate-300 sm:text-3xl">
-              Senior Business Analyst focused on data, analytics, and scalable
-              business systems.
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
-              I help organizations turn complex data, systems, and business
-              requirements into clear insights, reliable reporting, and scalable
-              platform improvements across fintech, SaaS, cloud technology, and
-              enterprise operations.
+            <div className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#595149]">
+              {contact.map((item) => (
+                item.href ? (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="transition hover:text-[#8a4f2f]"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <span key={item.label}>{item.label}</span>
+                )
+              ))}
+            </div>
+            <p className="mt-8 max-w-4xl text-xl leading-9 text-[#3b352f]">
+              Senior Analyst with 9+ years of experience leading enterprise
+              business analysis, payment platform modernization, and cloud
+              analytics initiatives across fintech, SaaS, financial services,
+              and enterprise technology.
             </p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="mailto:kylesewell32@gmail.com"
-                className="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+                href="mailto:kyleesewell@outlook.com"
+                className="rounded-md bg-[#211d18] px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#f6f2ea] transition hover:bg-[#8a4f2f]"
               >
-                Contact Me
+                Email
               </a>
-
               <a
-                href="/Kyle_Sewell_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-cyan-400 px-6 py-3 font-semibold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950"
+                href="tel:9788702388"
+                className="rounded-md border border-[#211d18]/30 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] transition hover:border-[#8a4f2f] hover:text-[#8a4f2f]"
               >
-                Download Resume
+                Call
               </a>
-
               <a
-                href="#experience"
-                className="rounded-full border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"
+                href="/KSewell_Resume_2026.docx"
+                className="rounded-md border border-[#211d18]/30 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] transition hover:border-[#8a4f2f] hover:text-[#8a4f2f]"
               >
-                View Experience
+                Resume
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-t border-slate-800 px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold">About</h2>
-          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-400">
-            I am a Business Intelligence and Analytics professional with 7+
-            years of experience supporting data-driven decision-making,
-            reporting platforms, business systems, and cross-functional delivery.
-            My background includes enterprise payments, cloud storage, SaaS,
-            customer success, compliance reporting, executive dashboards, data
-            pipeline validation, and operational analytics.
+      <section className="px-5 py-16 sm:px-8 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#8a4f2f]">
+              Professional Summary
+            </p>
+          </div>
+          <p className="text-2xl font-semibold leading-10 text-[#211d18]">
+            Proven record translating complex business requirements into
+            scalable technical solutions while partnering with executive
+            stakeholders, engineering teams, and cross-functional business
+            leaders to deliver data-driven products, operational efficiencies,
+            and strategic business insights.
           </p>
         </div>
       </section>
 
-      <section id="experience" className="border-t border-slate-800 px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold">Experience</h2>
-
-          <div className="mt-10 grid gap-6">
-            {experience.map((job) => (
-              <div
-                key={job.company}
-                className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition hover:border-cyan-400/60"
+      <section className="border-y border-[#211d18]/15 bg-[#ded5c7] px-5 py-16 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <h2 className="text-4xl font-black tracking-tight">
+              Skills Overview
+            </h2>
+            <p className="max-w-xl text-sm font-semibold uppercase tracking-[0.18em] text-[#675f55]">
+              Business analysis, payments, analytics, cloud data, and enterprise
+              systems
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {skillGroups.map((group) => (
+              <article
+                key={group.title}
+                className="rounded-md border border-[#211d18]/15 bg-[#f6f2ea] p-5"
               >
-                <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-30 w-30 shrink-0 items-center justify-center rounded-xl bg-white p-2">
-                      <img
-                        src={job.logo}
-                        alt={`${job.company} logo`}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
+                <h3 className="text-lg font-black">{group.title}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded border border-[#211d18]/15 px-2.5 py-1 text-xs font-semibold text-[#4d463f]"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                    <div>
-                      <h3 className="text-xl font-semibold">{job.role}</h3>
-                      <p className="text-cyan-400">{job.company}</p>
-                    </div>
-                  </div>
+      <section className="px-5 py-16 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-4xl font-black tracking-tight">
+            Selected Career Achievements
+          </h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {achievements.map((achievement, index) => (
+              <article
+                key={achievement}
+                className="rounded-md border border-[#211d18]/15 p-6"
+              >
+                <span className="text-sm font-black uppercase tracking-[0.28em] text-[#8a4f2f]">
+                  0{index + 1}
+                </span>
+                <p className="mt-5 text-lg font-semibold leading-8">
+                  {achievement}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                  <p className="text-sm text-slate-500 sm:text-right">
+      <section className="border-t border-[#211d18]/15 px-5 py-16 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-4xl font-black tracking-tight">
+            Professional Experience
+          </h2>
+          <div className="mt-10 space-y-6">
+            {experience.map((job) => (
+              <article
+                key={`${job.company}-${job.role}`}
+                className="grid gap-6 rounded-md border border-[#211d18]/15 bg-[#fffaf1] p-6 lg:grid-cols-[0.38fr_1fr]"
+              >
+                <div>
+                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8a4f2f]">
+                    {job.company}
+                  </p>
+                  <h3 className="mt-3 text-2xl font-black">{job.role}</h3>
+                  <p className="mt-3 font-semibold text-[#595149]">
+                    {job.location}
+                  </p>
+                  <p className="mt-1 text-sm font-semibold uppercase tracking-[0.14em] text-[#70685f]">
                     {job.dates}
                   </p>
                 </div>
-
-                <p className="mt-4 leading-7 text-slate-400">{job.text}</p>
-              </div>
+                <ul className="space-y-3 text-base leading-7 text-[#3b352f]">
+                  {job.bullets.map((bullet) => (
+                    <li key={bullet} className="grid grid-cols-[1rem_1fr] gap-3">
+                      <span className="mt-3 h-1.5 w-1.5 rounded-full bg-[#8a4f2f]" />
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-slate-800 px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold">Featured Work</h2>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {projects.map((project) => (
-              <div
-                key={project.title}
-                className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 transition hover:border-cyan-400/60"
-              >
-                <h3 className="text-xl font-semibold text-cyan-300">
-                  {project.title}
-                </h3>
-                <p className="mt-4 leading-7 text-slate-400">
-                  {project.description}
-                </p>
-              </div>
-            ))}
+      <section className="border-t border-[#211d18]/15 bg-[#211d18] px-5 py-14 text-[#f6f2ea] sm:px-8 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-[1fr_1.4fr] md:items-end">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.32em] text-[#c99164]">
+              Education
+            </p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight">
+              University of Tampa
+            </h2>
           </div>
-        </div>
-      </section>
-
-      <section className="border-t border-slate-800 px-6 py-20">
-        <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold">Skills</h2>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-slate-800 px-6 py-20">
-        <div className="mx-auto max-w-6xl rounded-3xl bg-slate-900 p-8 sm:p-12">
-          <h2 className="text-3xl font-bold">Let’s Connect</h2>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-400">
-            Open to senior business analyst, data analyst, business intelligence,
-            analytics engineering, and systems analyst opportunities.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="mailto:kylesewell@outlook.com"
-              className="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
-            >
-              Email Kyle
-            </a>
-
-            <a
-              href="/Kyle_Sewell_Resume.docx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-cyan-400 px-6 py-3 font-semibold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950"
-            >
-              Download Resume
-            </a>
-
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-300"
-            >
-              LinkedIn
-            </a>
+          <div className="text-lg font-semibold leading-8 text-[#e9dfcf]">
+            <p>Bachelor of Science, Management Information Systems</p>
+            <p className="text-[#bfb3a4]">September 2012 - June 2016</p>
           </div>
         </div>
       </section>
