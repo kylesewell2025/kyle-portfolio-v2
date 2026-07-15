@@ -1,23 +1,5 @@
 import Image from "next/image";
-
-const skills = [
-  "SQL",
-  "Snowflake",
-  "Amazon Redshift",
-  "AWS",
-  "Tableau",
-  "Power BI",
-  "Salesforce",
-  "NetSuite",
-  "HubSpot",
-  "dbt",
-  "Fivetran",
-  "Jira",
-  "Confluence",
-  "Data Modeling",
-  "Executive Reporting",
-  "UAT",
-];
+import Expertise from "./expertise";
 
 const metrics = [
   { value: "7+", label: "years in analytics and BI" },
@@ -331,24 +313,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[#E2E8F0] bg-[#1E293B] px-6 py-20 text-white sm:px-8 lg:px-12">
+      <section
+        id="expertise"
+        className="border-y border-[#E2E8F0] bg-[#F8FAFC] px-6 py-20 sm:px-8 lg:px-12"
+      >
         <div className="mx-auto max-w-7xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0EA5E9]">
-            Stack
-          </p>
-          <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
-            Tools across data, platforms, and delivery.
-          </h2>
-          <div className="mt-10 flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-[#F8FAFC] transition hover:border-[#0EA5E9] hover:text-white"
-              >
-                {skill}
-              </span>
-            ))}
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0EA5E9]">
+                Core Expertise
+              </p>
+              <h2 className="mt-4 text-4xl font-black tracking-tight sm:text-5xl">
+                Depth across data, systems, and delivery.
+              </h2>
+            </div>
+            <p className="max-w-xl text-[#64748B]">
+              Eight focus areas spanning analysis, analytics, and platform
+              delivery. Select a card to explore the related skills.
+            </p>
           </div>
+
+          <Expertise />
         </div>
       </section>
 
