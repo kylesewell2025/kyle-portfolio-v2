@@ -32,6 +32,14 @@ const analytics = [
   { label: "Stakeholder Readiness", value: "91%", width: "91%" },
 ];
 
+const industries = [
+  "Payment Processing & Merchant Services",
+  "Financial Technology (FinTech)",
+  "Financial Services",
+  "Cloud Storage & Infrastructure",
+  "Enterprise Software (SaaS)",
+];
+
 const experience = [
   {
     company: "Shift4 Payments",
@@ -115,6 +123,9 @@ export default function Home() {
               Kyle Sewell
             </a>
             <div className="hidden items-center gap-6 text-sm text-[#64748B] md:flex">
+              <a className="transition hover:text-[#2563EB]" href="#expertise">
+                Expertise
+              </a>
               <a className="transition hover:text-[#2563EB]" href="#experience">
                 Experience
               </a>
@@ -241,6 +252,55 @@ export default function Home() {
             customer success, compliance reporting, executive dashboards, data
             pipeline validation, and operational analytics.
           </p>
+        </div>
+      </section>
+
+      <section
+        id="expertise"
+        className="relative overflow-hidden border-y border-[#BFDBFE] bg-[#EFF6FF] px-6 py-20 sm:px-8 lg:px-12"
+      >
+        <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full border-[56px] border-white/50" />
+        <div className="absolute -bottom-32 left-[38%] h-72 w-72 rotate-12 border-[48px] border-[#DBEAFE]/70" />
+
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0EA5E9]">
+                Industry Expertise
+              </p>
+              <h2 className="mt-4 max-w-xl text-4xl font-black tracking-tight sm:text-5xl">
+                Domain fluency where data meets complex operations.
+              </h2>
+            </div>
+            <p className="max-w-2xl text-lg leading-8 text-[#475569] lg:justify-self-end">
+              Experience translating business questions into trusted reporting
+              across transaction-heavy, regulated, cloud-based, and recurring
+              revenue environments.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-6">
+            {industries.map((industry, index) => (
+              <article
+                key={industry}
+                className={`group relative min-h-44 overflow-hidden rounded-[1.75rem] border border-white/80 bg-white/80 p-6 shadow-lg shadow-blue-200/30 backdrop-blur transition hover:-translate-y-1 hover:border-[#7DD3FC] hover:bg-white ${
+                  index === 0 ? "lg:col-span-4" : "lg:col-span-2"
+                }`}
+              >
+                <span className="font-mono text-xs font-bold tracking-[0.2em] text-[#0EA5E9]">
+                  0{index + 1}
+                </span>
+                <h3
+                  className={`mt-10 max-w-xl font-black leading-tight text-[#1E293B] ${
+                    index === 0 ? "text-3xl sm:text-4xl" : "text-2xl"
+                  }`}
+                >
+                  {industry}
+                </h3>
+                <div className="absolute bottom-0 left-6 h-1 w-12 bg-[#2563EB] transition-all duration-300 group-hover:w-[calc(100%-3rem)]" />
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
